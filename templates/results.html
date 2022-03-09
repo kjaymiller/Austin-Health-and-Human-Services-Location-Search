@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mx-auto container">
+    {% include 'form.html' %}
+    <h2>
+        Fetching Results Near: <em>{{search_request['name']}} - {{search_request['address']}}</em>
+    </h2>
+    <div id="results">
+    {% if results %}
+        {% for result in results %}
+            {% include 'result.html' %}
+        {% endfor %}
+    {% endif %}
+    </div>
+</div>
+{% endblock %}

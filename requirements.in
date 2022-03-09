@@ -1,0 +1,17 @@
+elasticsearch
+googlemaps
+sodapy
+
+# fastAPI
+jinja2
+uvicorn
+fastapi
+python-multipart
+
+# Linting
+black
+isort
+pylint
+
+# testing
+pytest

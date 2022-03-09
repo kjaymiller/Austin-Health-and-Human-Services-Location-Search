@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mx-auto container">
+    {% include 'form.html' %}
+    <div id="results">
+    {% if results %}
+        Showing All Type - {{_type}}
+        <div class="flex flex-wrap w-46">
+        {% for result in results %}
+            {% include 'result.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}

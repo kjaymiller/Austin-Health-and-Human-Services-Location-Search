@@ -1,0 +1,11 @@
+<div class="m-3 border bg-white rounded-lg p-2">
+    <div class="">
+        <div class="flex">
+            {% for tag in result['type'] %}
+                <a class="p-1 mr-2 rounded-lg shadow bg-gray-100" href="/type/{{tag}}"><small>{{tag}}</small></a>
+            {% endfor %}
+            </div>
+        <h2 class="text-lg font-bold"><a href="{{result['website']}}">{{ result['name'] }}</a></h2>
+        <h2><small>{{result['address']}}</small></h2>
+    </div>
+</div>

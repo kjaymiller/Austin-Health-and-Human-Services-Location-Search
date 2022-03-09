@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mx-auto">
+<div class="flex justify-between items-end overflow-hidden h-36 my-3 ">
+  <h1 class="text-xl p-6 font-light">
+    Find the nearest Health and Human Service Centers Near You...
+  </h1>
+  <img class="h-96 object-center" src="/static/pexels-mart-production-7089393.jpg" alt="man in lab coat" />
+</div>
+<div class="bg-white p-3">
+<div class="my-5 font-thin text-lg">
+  <h1>Search to get started</h1>
+  {% include 'form.html' %}</div>
+
+
+  <h2 class="my-4 text-lg font-thin">Or View All By Type...</h2>
+
+  <div class="flex flex-wrap font-thin justify-center">
+  {% set agg=results['aggregations']['by_type']['buckets'] %}
+    {% for a in agg %}
+    <a href="type/{{a['key']}}">
+    <div class="rounded-lg   hover:shadow-xl hover:shadow-amber-100 hover:bg-sky-800 hover:text-white hover:border-blue-100 w-96 border p-4 m-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 m-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        stroke-width=".5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="{{icons[a['key']]}}" />
+    </svg>
+    
+        <h1 class="text-lg">{{a['key']}} [<span class="underline" href="{{a['key']}}">{{a['doc_count']}}</span>]</h1>
+        </div>
+      </a>
+  {% endfor %}
+  </div>
+</div>
+</div>
+
+{% endblock %}
