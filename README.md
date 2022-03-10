@@ -6,3 +6,8 @@ To Implement:
 - Setup Elasticsearch Cluster
 - Index Austin Health and Human Services Data (via `soda_to_es.py`) 
 - run via `uvicorn main:app --reload`
+
+Dependencies:
+- [Elasticsearch](https://pypi.org/project/elasticsearch8/)
+- [FastAPI](https://pypi.org/project/fastapi/)
+- [googlemaps](https://pypi.org/project/googlemaps/)
